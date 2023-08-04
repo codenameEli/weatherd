@@ -13,7 +13,7 @@ function WeeklyForecast() {
 				<li className="flex flex-col text-center justify-center items-center py-3 px-5 border-[3px] border-black rounded-2xl">
 					<span className="temp font-bold text-[20px] text-center">26°</span>
 					<span className="icon">
-						<SunIcon className="w-7 h-10" />
+						<SunIcon className="animate-[spin_7s_linear_infinite] w-7 h-10" />
 					</span>
           <span className="date text-sm font-bold mt-1">21 Jan</span>
 				</li>
@@ -21,7 +21,7 @@ function WeeklyForecast() {
         <li className="flex flex-col text-center justify-center items-center py-3 px-5 border-[3px] border-black rounded-2xl">
 					<span className="temp font-bold text-[20px] text-center">26°</span>
 					<span className="icon">
-						<SunIcon className="w-7 h-10" />
+						<SunIcon className="animate-[spin_7s_linear_infinite] w-7 h-10" />
 					</span>
           <span className="date text-sm font-bold mt-1">21 Jan</span>
 				</li>
@@ -29,7 +29,7 @@ function WeeklyForecast() {
         <li className="flex flex-col text-center justify-center items-center py-3 px-5 border-[3px] border-black rounded-2xl">
 					<span className="temp font-bold text-[20px] text-center">26°</span>
 					<span className="icon">
-						<SunIcon className="w-7 h-10" />
+						<SunIcon className="animate-[spin_7s_linear_infinite] w-7 h-10" />
 					</span>
           <span className="date text-sm font-bold mt-1">21 Jan</span>
 				</li>
@@ -37,7 +37,7 @@ function WeeklyForecast() {
         <li className="flex flex-col text-center justify-center items-center py-3 px-5 border-[3px] border-black rounded-2xl">
 					<span className="temp font-bold text-[20px] text-center">26°</span>
 					<span className="icon">
-						<SunIcon className="w-7 h-10" />
+						<SunIcon className="animate-[spin_7s_linear_infinite] w-7 h-10" />
 					</span>
           <span className="date text-sm font-bold mt-1">21 Jan</span>
 				</li>
