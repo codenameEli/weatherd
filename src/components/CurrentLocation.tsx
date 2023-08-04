@@ -1,5 +1,3 @@
-import React from "react";
-
 function CurrentLocation() {
 	return (
 		<div className="current-location">

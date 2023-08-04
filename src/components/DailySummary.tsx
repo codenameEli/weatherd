@@ -1,5 +1,3 @@
-import React from 'react'
-
 function DailySummary() {
   return (
     <div className='daily-summary text-left max-w-6xl'
