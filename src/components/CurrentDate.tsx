@@ -1,7 +1,11 @@
+import Moment from 'moment';
+
+const today = new Date();
+
 function CurrentDate() {
   return (
-    <div className='current-date text-sm py-1 px-1 w-[140px] mt-8 rounded-3xl bg-black text-[#ffe142]'>
-      Friday, 20 January
+    <div className='current-date text-sm py-1 px-5 mt-8 rounded-3xl bg-black text-[#ffe142]'>
+      {Moment(today).format('dddd, MMMM Do')}
     </div>
   )
 }
