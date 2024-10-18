@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function CurrentCondition({weatherAPI, reverseGeocodeAPI}) {
 	const [condition, setCondition] = useState(null);

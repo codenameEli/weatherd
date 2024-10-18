@@ -1,4 +1,4 @@
-import moment, { Moment } from "moment";
+import moment from "moment";
 
 class WeatherAPI {
 	key: string;

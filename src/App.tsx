@@ -4,7 +4,6 @@ import CurrentLocation from "./components/CurrentLocation"
 import CurrentTemp from "./components/CurrentTemp"
 import DailyMetrics from "./components/DailyMetrics"
 import DailySummary from "./components/DailySummary"
-import Nav from "./components/Nav"
 import WeeklyForecast from "./components/WeeklyForecast"
 import ReverseGeocodeAPI from "./services/ReverseGeocodeAPI"
 import WeatherAPI from "./services/WeatherAPI"
@@ -16,7 +15,6 @@ function App() {
 
   return (
     <div className='bg-[#ffe142] items-center flex flex-col text-center py-6 px-6 w-screen h-screen'>
-     {/* <Nav /> */}
      <CurrentLocation reverseGeocodeAPI={reverseGeocodeAPI}/>
      <CurrentDate />
      <CurrentCondition reverseGeocodeAPI={reverseGeocodeAPI} weatherAPI={weatherAPI} />
