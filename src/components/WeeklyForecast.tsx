@@ -3,7 +3,7 @@ import { SunIcon } from "@heroicons/react/24/solid";
 
 function WeeklyForecast() {
 	return (
-		<div className="weekly-forecast w-[400px]">
+		<div className="weekly-forecast max-w-[400px]">
 			<div className="weekly-forecast__header flex min-w-full justify-between items-center mt-2">
 				<h3 className="tex font-extrabold text-md">Weekly Forecast</h3>
 				<ArrowLongRightIcon className="w-10 h-10" />
