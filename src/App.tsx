@@ -19,7 +19,7 @@ function App() {
      <CurrentDate />
      <CurrentCondition reverseGeocodeAPI={reverseGeocodeAPI} weatherAPI={weatherAPI} />
      <CurrentTemp reverseGeocodeAPI={reverseGeocodeAPI} weatherAPI={weatherAPI} /> 
-     <DailySummary />
+     <DailySummary reverseGeocodeAPI={reverseGeocodeAPI} weatherAPI={weatherAPI}/>
      <DailyMetrics />
      <WeeklyForecast />
     </div>
