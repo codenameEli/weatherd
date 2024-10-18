@@ -26,7 +26,7 @@ function CurrentTemp({weatherAPI, reverseGeocodeAPI}) {
     }
   }, [weatherAPI, reverseGeocodeAPI]);
 
-	return <div className='current-temp tracking-tighter text-[200px] max-h-[250px] mt-[-30px] mb-[20px] flex'>{temp}°</div>;
+	return <div className='current-temp tracking-tighter text-[200px] leading-snug mt-[-30px] flex'>{temp}°</div>;
 }
 
 export default CurrentTemp;

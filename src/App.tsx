@@ -14,7 +14,7 @@ const weatherAPI = new WeatherAPI('ab1272725b276e1dae8ab5a260d08d82');
 function App() {
 
   return (
-    <div className='bg-[#ffe142] items-center flex flex-col text-center py-6 px-6 w-screen h-screen'>
+    <div className='bg-[#ffe142] items-center flex flex-col text-center py-6 px-6 min-w-screen min-h-screen'>
      <CurrentLocation reverseGeocodeAPI={reverseGeocodeAPI}/>
      <CurrentDate />
      <CurrentCondition reverseGeocodeAPI={reverseGeocodeAPI} weatherAPI={weatherAPI} />
