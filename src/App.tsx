@@ -30,11 +30,7 @@ function App() {
 							data.results.length > 0
 						) {
 							weatherAPI.get(position.coords.latitude, position.coords.longitude).then((results) => {
-                let color = weatherAPI.translateWeatherCodeToColor(results.current.weather_code); 
-
 								setColor(weatherAPI.translateWeatherCodeToColor(results.current.weather_code));
-
-                console.log(color);
 							});
 						}
 				})

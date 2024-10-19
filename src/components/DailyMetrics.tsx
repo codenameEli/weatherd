@@ -35,19 +35,19 @@ function DailyMetrics({weatherAPI, reverseGeocodeAPI}) {
   }, [weatherAPI, reverseGeocodeAPI]);
 
 	return <ul className='daily-metrics bg-black py-4 px-4 rounded-2xl justify-around flex sm:w-[400px] w-[80vw] mt-6 mb-6'>
-  <li className='daily-metric flex flex-col justify-center text-center items-center text-[#ffe142]'>
+  <li className='daily-metric flex flex-col justify-center text-center items-center text-white'>
     <QueueListIcon className='w-10 h-10 mb-3' />
     <span className='font-bold text-lg'>{wind}mph</span>
     <span className='font-thin text-md'>Wind</span>
   </li>
 
-  <li className='daily-metric flex flex-col justify-center text-center items-center text-[#ffe142]'>
+  <li className='daily-metric flex flex-col justify-center text-center items-center text-white'>
     <EyeDropperIcon className='w-10 h-10 mb-3' />
     <span className='font-bold text-lg'>{humidity}%</span>
     <span className='font-thin text-md'>Humidity</span>
   </li>
 
-  <li className='daily-metric flex flex-col justify-center text-center items-center text-[#ffe142]'>
+  <li className='daily-metric flex flex-col justify-center text-center items-center text-white'>
     <EyeIcon className='w-10 h-10 mb-3' />
     <span className='font-bold text-lg'>{precipitation}%</span>
     <span className='font-thin text-md'>Precipitation</span>
