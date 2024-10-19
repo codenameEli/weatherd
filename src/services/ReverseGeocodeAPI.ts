@@ -40,7 +40,7 @@ class ReverseGeocodeAPI {
     return results
 	}
 
-  async get(lat: number, lng: number) {
+  async get(lat: number, lng: number): Promise<{ results: any; }> {
     let cached = this.getCached(lat,lng);
 
     if (!cached) {
