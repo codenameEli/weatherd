@@ -15,7 +15,7 @@ class ReverseGeocodeAPI {
     localStorage.setItem(`${this.getID(lat,lng)}`, JSON.stringify(payload));
   }
 
-  getCached(lat: number, lng: number) {
+  getCached(lat: number, lng: number): {results: any} {
     let cached = localStorage.getItem(`${this.getID(lat,lng)}`);
 
     if (cached != 'undefined') cached = JSON.parse(cached)

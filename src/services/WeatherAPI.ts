@@ -3,7 +3,7 @@ import moment from "moment";
 class WeatherAPI {
 	key: string;
 	units: string;
-	weatherCodeLegend: [{code: number, text: string, color: string}];
+	weatherCodeLegend: {code: number, text: string, color: string}[];
 
 	constructor(key: string) {
 			this.key = key;
