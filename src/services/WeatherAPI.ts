@@ -240,7 +240,7 @@ class WeatherAPI {
     return results
 	}
 
-  async get(lat: number, lng: number): Promise<{ any: any; }> {
+  async get(lat: number, lng: number): Promise<{ current: any; }> {
     let cached = this.getCached(lat,lng);
 
     if (
