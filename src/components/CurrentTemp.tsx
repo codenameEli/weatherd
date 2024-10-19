@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 function CurrentTemp({weatherAPI, reverseGeocodeAPI}) {
 	const [temp, setTemp] = useState(null);
+	const [tempUnits, setTempUnits] = useState(null);
 
 	useEffect(() => {
     if (
@@ -18,7 +19,8 @@ function CurrentTemp({weatherAPI, reverseGeocodeAPI}) {
 							data.results.length > 0
 						) {
 							weatherAPI.get(position.coords.latitude, position.coords.longitude).then((results) => {
-								setTemp(Math.round(results.main.temp));
+								setTemp(Math.round(results.current.temperature_2m));
+								setTempUnits(results.current_units.temperature_2m);
 							});
 						}
 				})

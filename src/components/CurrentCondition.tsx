@@ -19,7 +19,7 @@ function CurrentCondition({weatherAPI, reverseGeocodeAPI}) {
 						) {
 							weatherAPI.get(position.coords.latitude, position.coords.longitude).then((results) => {
 								console.log(results)
-								setCondition(results.weather[0].main);
+								setCondition(weatherAPI.translateWeatherCodeToText(results.current.weather_code));
 							});
 						}
 				})

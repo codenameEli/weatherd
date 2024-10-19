@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 function DailyMetrics({weatherAPI, reverseGeocodeAPI}) {
 	const [wind, setWind] = useState(null);
 	const [humidity, setHumidity] = useState(null);
-	const [description, setDescription] = useState(null);
+	const [precipitation, setPrecipitation] = useState(null);
 
 	useEffect(() => {
     if (
@@ -24,9 +24,9 @@ function DailyMetrics({weatherAPI, reverseGeocodeAPI}) {
 							data.results.length > 0
 						) {
 							weatherAPI.get(position.coords.latitude, position.coords.longitude).then((results) => {
-                setWind( Math.round(results.wind.speed) );
-                setHumidity( Math.round(results.main.humidity) );
-                setDescription( results.weather[0].main );
+                setWind( Math.round(results.current.wind_speed_10m) );
+                setHumidity( Math.round(results.current.relative_humidity_2m) );
+                setPrecipitation( results.current.precipitation );
 							});
 						}
 				})
@@ -49,8 +49,8 @@ function DailyMetrics({weatherAPI, reverseGeocodeAPI}) {
 
   <li className='daily-metric flex flex-col justify-center text-center items-center text-[#ffe142]'>
     <EyeIcon className='w-10 h-10 mb-3' />
-    <span className='font-bold text-lg'>{description}</span>
-    <span className='font-thin text-md'>Looks</span>
+    <span className='font-bold text-lg'>{precipitation}%</span>
+    <span className='font-thin text-md'>Precipitation</span>
   </li>
 </ul>
 }

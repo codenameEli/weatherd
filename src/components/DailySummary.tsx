@@ -20,10 +20,10 @@ function DailySummary({weatherAPI, reverseGeocodeAPI}) {
 							data.results.length > 0
 						) {
 							weatherAPI.get(position.coords.latitude, position.coords.longitude).then((results) => {
-                const summary = `Today has a high of ${Math.round(results.main.temp_max)}° & a low of ${Math.round(results.main.temp_min)}°.`
+                const summary = `Today has a high of ${Math.round(results.daily.temperature_2m_max[0])}° & a low of ${Math.round(results.daily.temperature_2m_min[0])}°.`
 								setSummary(summary);
                 
-                const sunriseSunset = `Sunrise is at ${moment(results.sys.sunrise).format('LT')} and sunset is at ${moment(results.sys.sunset).format('LT')}.`
+                const sunriseSunset = `Sunrise is at ${moment(results.daily.sunrise[0]).format('LT')} and sunset is at ${moment(results.daily.sunset[0]).format('LT')}.`
 								setSunriseSunset(sunriseSunset);
 							});
 						}
