@@ -18,7 +18,6 @@ function CurrentCondition({weatherAPI, reverseGeocodeAPI}) {
 							data.results.length > 0
 						) {
 							weatherAPI.get(position.coords.latitude, position.coords.longitude).then((results) => {
-								console.log(results)
 								setCondition(weatherAPI.translateWeatherCodeToText(results.current.weather_code));
 							});
 						}
