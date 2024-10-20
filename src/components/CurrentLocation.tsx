@@ -21,7 +21,7 @@ function CurrentLocation({reverseGeocodeAPI}) {
 				})
 			});
     }
-  }, [reverseGeocodeAPI]);
+  }, [reverseGeocodeAPI]); 
 
 		return (
 			<div className="current-location">
