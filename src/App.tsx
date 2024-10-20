@@ -13,7 +13,6 @@ const reverseGeocodeAPI = new ReverseGeocodeAPI('AIzaSyAKnSRAB-vHYHrlgwvPje8IGlb
 const weatherAPI = new WeatherAPI('ab1272725b276e1dae8ab5a260d08d82');
 
 function App() {
-  const [color, setColor] = useState(null);
 
   useEffect(() => {
     if (
