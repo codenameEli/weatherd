@@ -1,6 +1,4 @@
-import { EyeDropperIcon } from '@heroicons/react/20/solid'
-import { EyeIcon } from '@heroicons/react/24/outline'
-import { QueueListIcon } from '@heroicons/react/24/solid'
+import { WiWindy, WiBarometer, WiRaindrops } from "weather-icons-react";
 
 import { useEffect, useState } from 'react';
 
@@ -36,19 +34,19 @@ function DailyMetrics({weatherAPI, reverseGeocodeAPI}) {
 
 	return <ul className='daily-metrics bg-black py-4 px-4 rounded-2xl justify-around flex sm:w-[400px] w-[80vw] mt-6 mb-6'>
   <li className='daily-metric flex flex-col justify-center text-center items-center text-white'>
-    <QueueListIcon className='w-10 h-10 mb-3' />
+    <WiWindy size={24} color='#fff' className='w-10 h-10 mb-3' />
     <span className='font-bold text-lg'>{wind}mph</span>
     <span className='font-thin text-md'>Wind</span>
   </li>
 
   <li className='daily-metric flex flex-col justify-center text-center items-center text-white'>
-    <EyeDropperIcon className='w-10 h-10 mb-3' />
+    <WiBarometer size={24} color='#fff' className='w-10 h-10 mb-3' />
     <span className='font-bold text-lg'>{humidity}%</span>
     <span className='font-thin text-md'>Humidity</span>
   </li>
 
   <li className='daily-metric flex flex-col justify-center text-center items-center text-white'>
-    <EyeIcon className='w-10 h-10 mb-3' />
+    <WiRaindrops size={24} className='w-10 h-10 mb-3' />
     <span className='font-bold text-lg'>{precipitation}%</span>
     <span className='font-thin text-md'>Precipitation</span>
   </li>
