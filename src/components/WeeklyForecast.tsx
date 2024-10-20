@@ -22,7 +22,7 @@ function WeeklyForecast({weatherAPI, reverseGeocodeAPI}) {
 						) {
 							weatherAPI.get(position.coords.latitude, position.coords.longitude).then((results) => {
 								const markup = results.daily.time.map((fd, i) => {
-									return <li key={i} className={`flex flex-col text-center justify-center items-center py-3 px-5 border-[3px] border-black rounded-2xl min-w-[90px] bg-${weatherAPI.translateWeatherCodeToColor(results.daily.weather_code[i])}`}>
+									return <li key={i} className={`flex flex-col text-center justify-center items-center py-2 px-2 border-[3px] border-black rounded-2xl min-w-[90px] bg-${weatherAPI.translateWeatherCodeToColor(results.daily.weather_code[i])}`}>
 										<span className="font-normal text-[10px] text-center">{weatherAPI.translateWeatherCodeToText(results.daily.weather_code[i])}</span> 
 										<span className="temp font-bold text-[20px] text-center">{Math.round(results.daily.temperature_2m_max[i])}°</span>
 										<span className="icon">
