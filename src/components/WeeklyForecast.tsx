@@ -39,7 +39,7 @@ function WeeklyForecast({weatherAPI, reverseGeocodeAPI}) {
     }
   }, [weatherAPI, reverseGeocodeAPI]);
 
-	return <div className="weekly-forecast max-w-[400px]">
+	return <div className="weekly-forecast w-11/12 sm:w-[400px]">
 	<div className="weekly-forecast__header flex min-w-full justify-between items-center mt-2">
 		<h3 className="tex font-extrabold text-md">Weekly Forecast</h3>
 	</div>
