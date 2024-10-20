@@ -39,7 +39,7 @@ function App() {
   }, [weatherAPI, reverseGeocodeAPI]);
 
   return (
-    <div className={`bg-${color} items-center flex flex-col text-center py-6 px-6 min-w-screen min-h-screen`}>
+    <div className={`bg-blue-100 items-center flex flex-col text-center py-6 px-6 min-w-screen min-h-screen`}>
      <CurrentLocation reverseGeocodeAPI={reverseGeocodeAPI}/>
      <CurrentDate />
      <CurrentCondition reverseGeocodeAPI={reverseGeocodeAPI} weatherAPI={weatherAPI} />
