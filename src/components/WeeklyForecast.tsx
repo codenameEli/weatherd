@@ -29,6 +29,7 @@ function WeeklyForecast({weatherAPI, reverseGeocodeAPI}) {
 										<WiDaySunny size={38} className="animate-[spin_7s_linear_infinite] mt-1 mb-1" />
 										</span>
 										<span className="date text-sm font-bold mt-1">{moment(fd).format('DD MMM')}</span>
+										<span className="date--day text-xs font-normal mt-1">{moment(fd).format('dddd')}</span>
 									</li>
 								})
                 setForecastDays(markup)
