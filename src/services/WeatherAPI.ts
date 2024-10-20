@@ -12,47 +12,47 @@ class WeatherAPI {
         {
           code: 0,
           text: 'Clear',
-          color: 'slate-150'
+          color: 'slate-50'
         },
         {
           code: 1,
           text: 'Mostly Clear',
-        color: 'slate-250'
+          color: 'slate-100'
         },
         {
           code: 2,
           text: 'Partly Cloudy',
-        color: 'slate-350'
+        color: 'slate-200'
         },
         {
           code: 3,
           text: 'Overcast',
-        color: 'slate-450'
+        color: 'slate-300'
         },
         {
           code: 45,
           text: 'Fog',
-        color: 'grey-350'
+        color: 'grey-300'
         },
         {
           code: 48,
           text: 'Icy Fog',
-        color: 'grey-550'
+        color: 'grey-500'
         },
         {
           code: 51,
           text: 'L.Drizzle',
-        color: 'azure-200'
+        color: 'cyan-200'
         },
         {
           code: 53,
           text: 'Drizzle',
-        color: 'azure-300'
+        color: 'cyan-300'
         },
         {
           code: 55,
           text: 'H.Drizzle',
-        color: 'azure-400'
+        color: 'cyan-400'
         },
         {
           code: 56,
@@ -67,87 +67,87 @@ class WeatherAPI {
         {
           code: 61,
           text: 'L.Rain',
-        color: 'blue-350'
+        color: 'blue-300'
         },
         {
           code: 63,
           text: 'Rain',
-        color: 'blue-450'
+        color: 'blue-500'
         },
         {
           code: 65,
           text: 'H.Rain',
-        color: 'blue-550'
+        color: 'blue-700'
         },
         {
           code: 66,
           text: 'L.Icy Rain',
-        color: 'violet-350'
+        color: 'violet-300'
         },
         {
           code: 67,
           text: 'Icy Rain',
-        color: 'violet-550'
+        color: 'violet-500'
         },
         {
           code: 71,
           text: 'L.Snow',
-        color: 'fuchsia-350'
+        color: 'fuchsia-300'
         },
         {
           code: 73,
           text: 'Snow',
-        color: 'fuchsia-450'
+        color: 'fuchsia-500'
         },
         {
           code: 75,
           text: 'H.Snow',
-        color: 'fuchsia-550'
+        color: 'fuchsia-700'
         },
         {
           code: 77,
           text: 'Snow Grains',
-        color: 'purple-150'
+        color: 'purple-100'
         },
         {
           code: 80,
           text: 'L.Showers',
-        color: 'azure-250'
+        color: 'cyan-400'
         },
         {
           code: 81,
           text: 'Showers',
-        color: 'azure-350'
+        color: 'cyan-600'
         },
         {
           code: 82,
           text: 'H.Showers',
-        color: 'azure-450'
+        color: 'cyan-800'
         },
         {
           code: 85,
           text: 'L.Snow Showers',
-        color: 'purple-250'
+        color: 'purple-300'
         },
         {
           code: 86,
           text: 'Snow Showers',
-          color: 'purple-450'
+          color: 'purple-500'
         },
         {
           code: 95,
           text: 'Thunder Storm',
-          color: 'pink-350'
+          color: 'pink-400'
         },
         {
           code: 96,
           text: 'T. Storm + L.Hail',
-          color: 'pink-450'
+          color: 'pink-500'
         },
         {
           code: 99,
           text: 'T. Storm + Hail',
-          color: 'pink-550'
+          color: 'pink-600'
         }
       ]
 	}
@@ -228,7 +228,7 @@ class WeatherAPI {
     await results;
 
     // TODO Chunk out what we are requesting here to get only what we need. Also may want to pass in additional params to add on through get()
-		await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,is_day,precipitation,rain,showers,snowfall,cloud_cover,wind_speed_10m,wind_direction_10m&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,daylight_duration,sunshine_duration,uv_index_max,precipitation_sum,precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max,wind_direction_10m_dominant&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=America%2FNew_York`)
+		await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,is_day,precipitation,rain,showers,snowfall,cloud_cover,wind_speed_10m,wind_direction_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset,daylight_duration,sunshine_duration,uv_index_max,precipitation_sum,precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max,wind_direction_10m_dominant&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=America%2FNew_York`)
       .then(res => res.json())
       .then((data) => {
         results = data
@@ -248,8 +248,6 @@ class WeatherAPI {
       this.isExpired(lat,lng)
     ) {
       const data = await this.query(lat, lng);
-
-      console.log(data)
 
       this.setCache(lat,lng,data);
       
