@@ -1,7 +1,11 @@
 function CurrentLocation({ location }) {
 	if (!location) return;
+
+	let address;
 	
-	const address = location.results[0].formatted_address;
+	if ( location.results[0].address_components.length > 0 ) {
+		address = location.results[0].address_components[0].long_name;
+	}
 
 	return (
 		<div className="current-location">

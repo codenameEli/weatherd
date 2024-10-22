@@ -6,7 +6,7 @@ class ReverseGeocodeAPI {
 
 	constructor(key: string) {
 			this.key = key;
-      this.resultType = 'locality';
+      this.resultType = 'political|locality|postal_code';
 	}
 
   getID(lat: number, lng: number) {
