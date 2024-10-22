@@ -9,6 +9,7 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       injectRegister: 'auto',
+      strategies: 'generateSW',
       manifest: {
         name: 'Weatherd',
         short_name: 'Weatherd',
