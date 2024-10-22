@@ -1,5 +1,7 @@
 import moment from "moment";
 
+// TODO remove old caches when new ones are set
+// TODO optimize cache expiration to a key in 1 cache object set for all weather api calls
 class WeatherAPI {
 	key: string;
 	units: string;
@@ -241,20 +243,20 @@ class WeatherAPI {
 	}
 
   async get(lat: number, lng: number): Promise<{ current: any; }> {
-    let cached = this.getCached(lat,lng);
+    // let cached = this.getCached(lat,lng);
 
-    if (
-      !cached ||
-      this.isExpired(lat,lng)
-    ) {
+    // if (
+    //   !cached ||
+    //   this.isExpired(lat,lng)
+    // ) {
       const data = await this.query(lat, lng);
 
-      this.setCache(lat,lng,data);
+      // this.setCache(lat,lng,data);
       
-      cached = data;
-    }
+      // cached = data;
+    // }
 
-    return cached
+    return data
 	}
 }
 

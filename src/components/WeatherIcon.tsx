@@ -12,6 +12,7 @@ import {
 } from "weather-icons-react";
 
 function getIcon(weatherCode = 0) {
+  // TODO Consolidate this code to a better format
 	switch (weatherCode) {
 		case 2:
 			return (

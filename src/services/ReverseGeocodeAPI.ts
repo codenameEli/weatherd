@@ -1,3 +1,5 @@
+// TODO remove old caches when new ones are set
+
 class ReverseGeocodeAPI {
 	key: string;
   resultType: string;
@@ -39,17 +41,17 @@ class ReverseGeocodeAPI {
 	}
 
   async get(lat: number, lng: number): Promise<{ results: any; }> {
-    let cached = this.getCached(lat,lng);
+    // let cached = this.getCached(lat,lng);
 
-    if (!cached) {
+    // if (!cached) {
       const data = await this.query(lat, lng);
 
-      this.setCache(lat,lng,data);
+      // this.setCache(lat,lng,data);
 
-      cached = data;
-    }
+      // cached = data;
+    // }
 
-    return cached
+    return data
 	}
 }
 
