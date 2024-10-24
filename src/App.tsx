@@ -8,6 +8,7 @@ import DailySummary from "./components/DailySummary"
 import WeeklyForecast from "./components/WeeklyForecast"
 import ReverseGeocodeAPI from "./services/ReverseGeocodeAPI"
 import WeatherAPI from "./services/WeatherAPI"
+import HourlyForecast from "./components/HourlyForecast"
 
 const reverseGeocodeAPI = new ReverseGeocodeAPI('AIzaSyAKnSRAB-vHYHrlgwvPje8IGlb05h1SAog');
 const weatherAPI = new WeatherAPI('ab1272725b276e1dae8ab5a260d08d82');
@@ -65,6 +66,7 @@ function App() {
       <CurrentTemp weatherData={weatherData} /> 
       <DailySummary weatherData={weatherData}/>
       <DailyMetrics weatherData={weatherData}/>
+      <HourlyForecast weatherData={weatherData} weatherAPI={weatherAPI}/>
       <WeeklyForecast weatherData={weatherData} weatherAPI={weatherAPI}/>
      </div>
     );
