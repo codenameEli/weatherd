@@ -23,7 +23,7 @@ function HourlyForecast({ weatherData, weatherAPI }) {
             {Math.round(weatherData.hourly.temperature_2m[i])}°
           </span>
           <span className="icon">
-            <WeatherIcon weatherCode={weatherData.hourly.weather_code[i]} />
+            <WeatherIcon weatherCode={weatherData.hourly.weather_code[i]} time={fd} />
           </span>
           <span className="date text-sm font-bold mt-1">
             {moment(fd).format("hA")}

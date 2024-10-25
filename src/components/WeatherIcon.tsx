@@ -1,5 +1,8 @@
+import moment from "moment";
 import {
 	WiDaySunny,
+	WiNightClear,
+	WiNightAltCloudy,
 	WiNightPartlyCloudy,
 	WiDaySunnyOvercast,
 	WiFog,
@@ -8,219 +11,89 @@ import {
 	WiSnow,
 	WiShowers,
 	WiThunderstorm,
-	WiHail
+	WiHail,
 } from "weather-icons-react";
 
-function getIcon(weatherCode = 0) {
-  // TODO Consolidate this code to a better format
+function getDayIcon(weatherCode = 0) {
+	// TODO Consolidate this code to a better format
 	switch (weatherCode) {
 		case 2:
-			return (
-				<WiNightPartlyCloudy
-					size={38}
-					className="mt-1 mb-1"
-				/>
-			);
+			return <WiNightPartlyCloudy size={38} className="mt-1 mb-1" />;
 
 		case 3:
-			return (
-				<WiDaySunnyOvercast
-					size={38}
-					className="mt-1 mb-1"
-				/>
-			);
+			return <WiDaySunnyOvercast size={38} className="mt-1 mb-1" />;
 
 		case 45:
-			return (
-				<WiFog
-					size={38}
-					className="mt-1 mb-1"
-				/>
-			);
+			return <WiFog size={38} className="mt-1 mb-1" />;
 
 		case 48:
-			return (
-				<WiFog
-					size={38}
-					className="mt-1 mb-1"
-				/>
-			);
+			return <WiFog size={38} className="mt-1 mb-1" />;
 
 		case 51:
-			return (
-				<WiRainMix
-					size={38}
-					className="mt-1 mb-1"
-				/>
-			);
+			return <WiRainMix size={38} className="mt-1 mb-1" />;
 
 		case 53:
-			return (
-				<WiRainMix
-					size={38}
-					className="mt-1 mb-1"
-				/>
-			);
+			return <WiRainMix size={38} className="mt-1 mb-1" />;
 
 		case 55:
-			return (
-				<WiRainMix
-					size={38}
-					className="mt-1 mb-1"
-				/>
-			);
+			return <WiRainMix size={38} className="mt-1 mb-1" />;
 
 		case 56:
-			return (
-				<WiRainMix
-					size={38}
-					className="mt-1 mb-1"
-				/>
-			);
+			return <WiRainMix size={38} className="mt-1 mb-1" />;
 
 		case 57:
-			return (
-				<WiRainMix
-					size={38}
-					className="mt-1 mb-1"
-				/>
-			);
+			return <WiRainMix size={38} className="mt-1 mb-1" />;
 
 		case 61:
-			return (
-				<WiRain
-					size={38}
-					className="mt-1 mb-1"
-				/>
-			);
+			return <WiRain size={38} className="mt-1 mb-1" />;
 
 		case 63:
-			return (
-				<WiRain
-					size={38}
-					className="mt-1 mb-1"
-				/>
-			);
+			return <WiRain size={38} className="mt-1 mb-1" />;
 
 		case 65:
-			return (
-				<WiRain
-					size={38}
-					className="mt-1 mb-1"
-				/>
-			);
+			return <WiRain size={38} className="mt-1 mb-1" />;
 
 		case 66:
-			return (
-				<WiRain
-					size={38}
-					className="mt-1 mb-1"
-				/>
-			);
+			return <WiRain size={38} className="mt-1 mb-1" />;
 
 		case 67:
-			return (
-				<WiRain
-					size={38}
-					className="mt-1 mb-1"
-				/>
-			);
+			return <WiRain size={38} className="mt-1 mb-1" />;
 
 		case 71:
-			return (
-				<WiSnow
-					size={38}
-					className="mt-1 mb-1"
-				/>
-			);
+			return <WiSnow size={38} className="mt-1 mb-1" />;
 
 		case 73:
-			return (
-				<WiSnow
-					size={38}
-					className="mt-1 mb-1"
-				/>
-			);
+			return <WiSnow size={38} className="mt-1 mb-1" />;
 
 		case 75:
-			return (
-				<WiSnow
-					size={38}
-					className="mt-1 mb-1"
-				/>
-			);
+			return <WiSnow size={38} className="mt-1 mb-1" />;
 
 		case 77:
-			return (
-				<WiSnow
-					size={38}
-					className="mt-1 mb-1"
-				/>
-			);
+			return <WiSnow size={38} className="mt-1 mb-1" />;
 
 		case 80:
-			return (
-				<WiShowers
-					size={38}
-					className="mt-1 mb-1"
-				/>
-			);
+			return <WiShowers size={38} className="mt-1 mb-1" />;
 
 		case 81:
-			return (
-				<WiShowers
-					size={38}
-					className="mt-1 mb-1"
-				/>
-			);
+			return <WiShowers size={38} className="mt-1 mb-1" />;
 
 		case 82:
-			return (
-				<WiShowers
-					size={38}
-					className="mt-1 mb-1"
-				/>
-			);
+			return <WiShowers size={38} className="mt-1 mb-1" />;
 
 		case 85:
-			return (
-				<WiSnow
-					size={38}
-					className="mt-1 mb-1"
-				/>
-			);
+			return <WiSnow size={38} className="mt-1 mb-1" />;
 
 		case 86:
-			return (
-				<WiSnow
-					size={38}
-					className="mt-1 mb-1"
-				/>
-			);
+			return <WiSnow size={38} className="mt-1 mb-1" />;
 
 		case 95:
-			return (
-				<WiThunderstorm
-					size={38}
-					className="mt-1 mb-1"
-				/>
-			);
+			return <WiThunderstorm size={38} className="mt-1 mb-1" />;
 
 		case 96:
-			return (
-				<WiHail
-					size={38}
-					className="mt-1 mb-1"
-				/>
-			);
+			return <WiHail size={38} className="mt-1 mb-1" />;
 
 		case 97:
-			return (
-				<WiHail
-					size={38}
-					className="mt-1 mb-1"
-				/>
-			);
+			return <WiHail size={38} className="mt-1 mb-1" />;
 
 		default:
 			return (
@@ -234,10 +107,111 @@ function getIcon(weatherCode = 0) {
 	}
 }
 
-function WeatherIcon({ weatherCode = 0 }) {
-	return (
-		getIcon(weatherCode)
-	);
+function getNightIcon(weatherCode = 0) {
+	// TODO Consolidate this code to a better format
+	switch (weatherCode) {
+		case 2:
+			return <WiNightPartlyCloudy size={38} className="mt-1 mb-1" />;
+
+		case 3:
+			return <WiNightAltCloudy size={38} className="mt-1 mb-1" />;
+
+		case 45:
+			return <WiFog size={38} className="mt-1 mb-1" />;
+
+		case 48:
+			return <WiFog size={38} className="mt-1 mb-1" />;
+
+		case 51:
+			return <WiRainMix size={38} className="mt-1 mb-1" />;
+
+		case 53:
+			return <WiRainMix size={38} className="mt-1 mb-1" />;
+
+		case 55:
+			return <WiRainMix size={38} className="mt-1 mb-1" />;
+
+		case 56:
+			return <WiRainMix size={38} className="mt-1 mb-1" />;
+
+		case 57:
+			return <WiRainMix size={38} className="mt-1 mb-1" />;
+
+		case 61:
+			return <WiRain size={38} className="mt-1 mb-1" />;
+
+		case 63:
+			return <WiRain size={38} className="mt-1 mb-1" />;
+
+		case 65:
+			return <WiRain size={38} className="mt-1 mb-1" />;
+
+		case 66:
+			return <WiRain size={38} className="mt-1 mb-1" />;
+
+		case 67:
+			return <WiRain size={38} className="mt-1 mb-1" />;
+
+		case 71:
+			return <WiSnow size={38} className="mt-1 mb-1" />;
+
+		case 73:
+			return <WiSnow size={38} className="mt-1 mb-1" />;
+
+		case 75:
+			return <WiSnow size={38} className="mt-1 mb-1" />;
+
+		case 77:
+			return <WiSnow size={38} className="mt-1 mb-1" />;
+
+		case 80:
+			return <WiShowers size={38} className="mt-1 mb-1" />;
+
+		case 81:
+			return <WiShowers size={38} className="mt-1 mb-1" />;
+
+		case 82:
+			return <WiShowers size={38} className="mt-1 mb-1" />;
+
+		case 85:
+			return <WiSnow size={38} className="mt-1 mb-1" />;
+
+		case 86:
+			return <WiSnow size={38} className="mt-1 mb-1" />;
+
+		case 95:
+			return <WiThunderstorm size={38} className="mt-1 mb-1" />;
+
+		case 96:
+			return <WiHail size={38} className="mt-1 mb-1" />;
+
+		case 97:
+			return <WiHail size={38} className="mt-1 mb-1" />;
+
+		default:
+			return (
+				<WiNightClear
+					size={38}
+					className="mt-1 mb-1"
+				/>
+			);
+
+			break;
+	}
+}
+
+function isDay(time) {
+	console.log(moment(time).format("H"))
+	return parseInt(moment(time).format("H")) >= 6 && parseInt(moment(time).format("H")) <= 18;
+}
+
+function WeatherIcon({ weatherCode = 0, time = "" }) {
+	console.log(isDay(time));
+	if (isDay(time)) {
+		return getDayIcon(weatherCode);
+	} else {
+		return getNightIcon(weatherCode);
+	}
 }
 
 export default WeatherIcon;
