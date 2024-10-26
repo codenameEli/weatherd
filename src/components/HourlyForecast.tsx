@@ -4,8 +4,8 @@ import WeatherIcon from "./WeatherIcon";
 function HourlyForecast({ weatherData, weatherAPI }) {
 	const markup = weatherData.hourly.time.map((fd, i) => {
     if (
-      moment(fd).format("hA") >= moment(new Date()).format("hA") && 
-      moment(fd) > moment(new Date())
+      moment(fd).isSameOrAfter(new Date()) && 
+      moment(fd).isSameOrBefore( moment(new Date()).add(25, 'hours'))
     ) {
       return (
         <li
