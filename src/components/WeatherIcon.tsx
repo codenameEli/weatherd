@@ -201,12 +201,10 @@ function getNightIcon(weatherCode = 0) {
 }
 
 function isDay(time) {
-	console.log(moment(time).format("H"))
 	return parseInt(moment(time).format("H")) >= 6 && parseInt(moment(time).format("H")) <= 18;
 }
 
 function WeatherIcon({ weatherCode = 0, time = "" }) {
-	console.log(isDay(time));
 	if (isDay(time)) {
 		return getDayIcon(weatherCode);
 	} else {
